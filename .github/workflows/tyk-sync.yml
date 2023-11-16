@@ -2,6 +2,10 @@ name: GitHub Actions Demo
 on:
   pull_request:
     types: [closed]
+  workflow_run:
+    workflows: [Run Tests]
+    types:
+      - completed
 jobs:
   Tyk-CICD-Demo:
     if: github.event.pull_request.merged == true
