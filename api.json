@@ -1,6 +1,6 @@
 {
     "id": "641c14e80fffb800010197be",
-    "name": "Rate Limit Proxy",
+    "name": "Rate Limit",
     "slug": "rate-limit-proxy",
     "listen_port": 0,
     "protocol": "",
