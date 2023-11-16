@@ -24,6 +24,7 @@ jobs:
           curl -s https://packagecloud.io/install/repositories/tyk/tyk-sync/script.deb.sh | sudo bash
       - name: Install Tyk Sync
         run: |
+          sudo apt-get update
           sudo apt-get install tyk-sync=1.4.1
       - name: Run Tyk Sync
         run: |
