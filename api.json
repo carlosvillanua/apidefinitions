@@ -30,7 +30,7 @@
         "use_cookie": false,
         "cookie_name": "",
         "disable_header": false,
-        "auth_header_name": "Authorization",
+        "auth_header_name": "Auth",
         "use_certificate": false,
         "validate_signature": false,
         "signature": {
