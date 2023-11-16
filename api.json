@@ -473,5 +473,5 @@
     },
     "analytics_plugin": {},
     "tags": [],
-    "detailed_tracing": false
+    "detailed_tracing": true
 }
