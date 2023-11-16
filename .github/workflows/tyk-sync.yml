@@ -47,3 +47,14 @@ jobs:
         run: |
           /opt/tyk-sync/tyk-sync sync -d="$dashboard" -s="$dash_key" $repo
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Log level: $LEVEL"
+          echo "Tags: $TAGS"
+          echo "Environment: $ENVIRONMENT"
+        env:
+          LEVEL: ${{ inputs.logLevel }}
+          TAGS: ${{ inputs.tags }}
+          ENVIRONMENT: ${{ inputs.environment }}
