@@ -2,32 +2,14 @@ name: GitHub Actions Demo
 on:
   pull_request:
     types: [closed]
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
-      tags:
-        description: 'Test scenario tags'
-        required: false
-        type: boolean
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true
+    
 jobs:
   Tyk-CICD-Demo:
     if: github.event.pull_request.merged == true
     env:
       dashboard: https://7d4a-2a0c-5a82-9203-e900-dba-2e2c-6759-ac8
       dash_key: 0b510e344c04432c546a582db9d16c0d
-      repo: https://github.com/rewsmith/tyk-github-actions-example.git
+      repo: https://github.com/carlostyk/apidefinitions.git
     runs-on: ubuntu-18.04
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -47,14 +29,3 @@ jobs:
         run: |
           /opt/tyk-sync/tyk-sync sync -d="$dashboard" -s="$dash_key" $repo
       - run: echo "🍏 This job's status is ${{ job.status }}."
-  log-the-inputs:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "Log level: $LEVEL"
-          echo "Tags: $TAGS"
-          echo "Environment: $ENVIRONMENT"
-        env:
-          LEVEL: ${{ inputs.logLevel }}
-          TAGS: ${{ inputs.tags }}
-          ENVIRONMENT: ${{ inputs.environment }}
