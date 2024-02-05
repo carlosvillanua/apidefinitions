@@ -1,0 +1,39 @@
+{
+    "components": {
+        "securitySchemes": {
+            "jwtAuth": {
+                "bearerFormat": "JWT",
+                "scheme": "bearer",
+                "type": "http"
+            }
+        }
+    },
+    "info": {
+        "contact": {},
+        "title": "ST Demo",
+        "version": "1.0.0"
+    },
+    "openapi": "3.0.3",
+    "paths": {
+        "/rewrite": {
+            "get": {
+                "operationId": "rewriteget",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        {
+            "jwtAuth": []
+        }
+    ],
+    "servers": [
+        {
+            "url": "http://localhost:8080/st-demo/"
+        }
+    ]
+}
