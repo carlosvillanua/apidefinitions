@@ -1095,7 +1095,7 @@
     ],
     "servers": [
         {
-            "url": "http://localhost:8080/st-demo-classic"
+            "url": "http://localhost:8080/httpbin-secured"
         },
         {
             "url": "https://httpbin.org"
