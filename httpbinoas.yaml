@@ -253,21 +253,12 @@ paths:
                   value:
                     origin: 10.100.10.10, 10.100.20.254, 52.91.14.13
         '401':
-          description: Unauthorized Authentication is required and has failed or has not yet been provided.
-          content:
-             application/json:
+          description: Unauthorized
+          headers:
+            Www-Authenticate:
               schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-                    description: Error message
-                    example: Unauthorized
-              examples:
-                unauthorized:
-                   description: Example of a 401 response
-                   value:
-                     error: Unauthorized
+                type: string
+                example: valid key needed
   /user-agent:
     get:
       summary: Returns the user agent.
