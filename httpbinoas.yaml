@@ -252,6 +252,22 @@ paths:
                   description: Example of multiple IPs
                   value:
                     origin: 10.100.10.10, 10.100.20.254, 52.91.14.13
+          '401':
+            description: Unauthorized – Authentication is required and has failed or has not yet been provided.
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    error:
+                      type: string
+                      description: Error message
+                      example: Unauthorized
+                examples:
+                  unauthorized:
+                    description: Example of a 401 response
+                    value:
+                      error: Unauthorized
   /user-agent:
     get:
       summary: Returns the user agent.
